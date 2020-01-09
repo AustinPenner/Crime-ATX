@@ -1,0 +1,6 @@
+Lat/Long Coordinates
+Topleft: 	30.387, -97.803		Done		677
+Topright:	30.378, -97.679		Done		620
+Middle:		30.291, -97.759		Done		664
+BotLeft:	30.206, -97.822		Done		569
+BotRight:	30.251, -97.694		Done		608
