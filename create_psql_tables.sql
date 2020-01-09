@@ -1,6 +1,6 @@
 CREATE TABLE crime
 (
-incident_no	integer,
+incident_no	bigint,
 high_offense_description	varchar(256),
 high_offense_code	integer,
 fam_violence	varchar(5),
@@ -37,15 +37,15 @@ id	varchar(80),
 alias	varchar(256),
 name	varchar(256),
 review_count	integer,
-rating	numeric(2, 2),
+rating	numeric(3, 2),
 latitude	numeric(10,7),
 longitude	numeric(10,7),
-price	varchar(5),
 address1	varchar(80),
 address2	varchar(80),
 address3	varchar(80),
 city	varchar(20),
-zip	varchar(10),
+zip_code	varchar(10),
 country	varchar(5),
 state	varchar(5)
 );
+

@@ -51,4 +51,4 @@ if __name__ == "__main__":
     bars = db['bars']
 
     api = YelpFusion(key)
-    api.search_by_location_and_type(30.378, -97.679, 15000, 50, "bars", bars)
+    api.search_by_location_and_type(30.387, -97.803, 15000, 50, "bars", bars)
