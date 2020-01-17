@@ -10,12 +10,12 @@ class YelpFusion(object):
         self.api_key = api_key
 
 
-    def search_by_location_and_type(self, latitude, longitude, radius, limit, categories, collection):
+    def search_by_location_and_type(self, lat, lng, radius, limit, categories, collection):
         endpoint_url = 'https://api.yelp.com/v3/businesses/search'
         headers = {'Authorization': 'Bearer {}'.format(self.api_key)}
         params = {
-            'latitude': latitude,
-            'longitude': longitude,
+            'latitude': lat,
+            'longitude': lng,
             'radius': radius,
             'categories': categories,
             'sort_by': 'distance',
@@ -50,5 +50,17 @@ if __name__ == "__main__":
     db = client['bars_and_crime']
     bars = db['bars']
 
+    search_radius = 15000
+    search_limit = 50
+    search_points = [[30.387, -97.803],
+                 [30.378, -97.679],
+                 [30.291, -97.759],
+                 [30.206, -97.822],
+                 [30.251, -97.694]]
+
+
     api = YelpFusion(key)
-    api.search_by_location_and_type(30.387, -97.803, 15000, 50, "bars", bars)
+    for point in search_points:
+        lat, lng = point
+        api.search_by_location_and_type(lat, lng, search_radius,
+                                        search_limit, "bars", bars)
